@@ -15,7 +15,7 @@
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/main/java/org/endofusion/endoserver/config/SecurityConfiguration.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/org/product-server/product/config/SecurityConfiguration.java</file>
         </fileset>
       </configuration>
     </facet>

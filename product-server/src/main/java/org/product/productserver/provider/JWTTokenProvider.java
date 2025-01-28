@@ -29,8 +29,8 @@ public class JWTTokenProvider {
 
     public String generateJwtToken(UserPrincipal userPrincipal) {
         String[] claims = getClaimsFromUser(userPrincipal);
-        return JWT.create().withIssuer(ENDOFUSION_MANAGEMENT_PLATFORM)
-                .withAudience(ENDOFUSION_MANAGEMENT_PLATFORM_ADMINISTRATION)
+        return JWT.create().withIssuer(PRODUCT_MANAGEMENT_PLATFORM)
+                .withAudience(PRODUCT_MANAGEMENT_PLATFORM_ADMINISTRATION)
                 .withIssuedAt(new Date())
                 .withSubject(userPrincipal.getUsername())
                 .withArrayClaim(AUTHORITIES, claims)
@@ -74,7 +74,7 @@ public class JWTTokenProvider {
         JWTVerifier verifier;
         try {
             Algorithm algorithm = HMAC512(secret);
-            verifier = JWT.require(algorithm).withIssuer(ENDOFUSION_MANAGEMENT_PLATFORM).build();
+            verifier = JWT.require(algorithm).withIssuer(PRODUCT_MANAGEMENT_PLATFORM).build();
         } catch (JWTVerificationException exception) {
             throw new JWTVerificationException(TOKEN_CANNOT_BE_VERIFIED);
         }
